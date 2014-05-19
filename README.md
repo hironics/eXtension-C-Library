@@ -1,7 +1,7 @@
 xclib
 =====
 
-Extension library for C, including Queue, Stack and Common String functions 
+Extension library for C, including Queue, Stack and Common String functions. C Standard library has some popular functions including memory allocation, assert, time and basic string functions. However, it's still a burden to recreate some ubiquitous data structure and algorithm.
 
 ### Stack
 
