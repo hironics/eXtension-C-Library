@@ -23,27 +23,27 @@ typedef struct hashmap * hashmap_p;
 
 /* Create a new hashmap. The hashmap created by this method must be eventually 
    destroyed by a call to hashmap_free to avoid memory leak */
-hashmap_p hashmap_create();
+hashmap_p Hashmap_create();
 
 /*
 free hashmap
 */
 
-void hashmap_free(hashmap_p h);
+void Hashmap_free(hashmap_p h);
 
 /* Place an entry with the value val and length len into the hashmap m and associate
    it with the key key. The key and value are copied by value, not by pointer,
    so if they were created on the heap, they must be freed later. */
-void hashmap_put(hashmap_p m, char* key, void* val, size_t len);
+void Hashmap_put(hashmap_p m, char* key, void* val, size_t len);
 
 /* Get the value of the entry in hashmap m associated with key key */
-void* hashmap_get(hashmap_p m, char* key);
+void* Hashmap_get(hashmap_p m, char* key);
 
 /* Remove the item associated with the key key in the hashmap m. The memory for the
    entry is completely freed, so use hashmap_get and make a deep copy if you wish to
    retain it. */
-void hashmap_remove(hashmap_p m, char* key);
+void Hashmap_remove(hashmap_p m, char* key);
 
 /* Hash function for the key key. This function is not meant to be called directly */
-size_t hashme(char * key);
+size_t Hashmap_hash(char * key);
 #endif

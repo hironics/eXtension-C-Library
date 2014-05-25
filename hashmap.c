@@ -11,7 +11,7 @@ struct hashmap{
 };
 
 
-hashmap_p hashmap_create()
+hashmap_p Hashmap_create()
 {
     int i;
     hashmap_p hash = (hashmap_p) malloc (sizeof(struct hashmap));
@@ -26,7 +26,7 @@ hashmap_p hashmap_create()
     return hash;
 }
 
-size_t hashme(char * c)
+size_t Hashmap_hash(char * c)
 {
     size_t hashvalue = 0;
     int i = 0;
@@ -36,9 +36,9 @@ size_t hashme(char * c)
     return hashvalue;
 }
 
-void hashmap_put(hashmap_p m, char* key, void* val, size_t len)
+void Hashmap_put(hashmap_p m, char* key, void* val, size_t len)
 {
-    size_t index = hashme(key)%m->num_buckets;
+    size_t index = Hashmap_hash(key)%m->num_buckets;
     kv_p k;
     kv_p tmp;
 
@@ -61,9 +61,9 @@ void hashmap_put(hashmap_p m, char* key, void* val, size_t len)
     }
 }
 
-void * hashmap_get(hashmap_p m, char * key)
+void * Hashmap_get(hashmap_p m, char * key)
 {
-    size_t index = hashme(key)%m->num_buckets;
+    size_t index = Hashmap_hash(key)%m->num_buckets;
     kv_p k;
     k = m->buckets[index];
     if(k==NULL){
@@ -78,9 +78,9 @@ void * hashmap_get(hashmap_p m, char * key)
 }
 
 
-void hashmap_remove(hashmap_p m, char* key)
+void Hashmap_remove(hashmap_p m, char* key)
 {
-    size_t index = hashme(key)%m->num_buckets;
+    size_t index = Hashmap_hash(key)%m->num_buckets;
     kv_p iter, prev;
     int i=0;
 
@@ -111,7 +111,7 @@ void _free_list(kv_p p)
     free(p);
 }
 
-void hashmap_free(hashmap_p h)
+void Hashmap_free(hashmap_p h)
 {
     size_t i;
 
