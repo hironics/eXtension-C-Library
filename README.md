@@ -12,13 +12,14 @@ Extension library for C, including Queue, Stack, Hashmap, LinkedList and Common 
 
 ### Queue
 
-* hashmap_create
-* hashme: hash function, which accepts sring, returns size_t value
-* hashmap_put
-* hashmap_get
-* hashmap_remove
 
 ### Hashmap 
+
+* Hashmap_create
+* Hashmap_hash: hash function, which accepts sring, returns size_t value
+* Hashmap_put
+* Hashmap_get
+* Hashmap_remove
 
 ### LinkedList
 
