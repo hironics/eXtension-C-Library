@@ -6,7 +6,7 @@ void print_preorder(node_p  tree)
 {
     if (tree)
     {
-        printf("%d, ",*((int *)(tree->val)));
+        printf("%d, ",tree->val);
         print_preorder(tree->left);
         print_preorder(tree->right);
     }
@@ -22,10 +22,10 @@ int main(int argc, char * argv[])
     t = Bstree_create();
 
     puts("insert" " items");
-    Bstree_put(t, &a[0], 2);
-    Bstree_put(t, &a[1], 2);
-    Bstree_put(t, &a[2], 2);
-    Bstree_put(t, &a[3], 2);
+    Bstree_put(t, a[0]);
+    Bstree_put(t, a[1]);
+    Bstree_put(t, a[2]);
+    Bstree_put(t, a[3]);
     /*
     Bstree_put(t, "ab", 2);
     Bstree_put(t, "ac", 2);
@@ -41,7 +41,8 @@ int main(int argc, char * argv[])
     print_postorder(t->root);
     printf("\n");
 
-    //Bstree_remove(t, "ac");
+    Bstree_remove(&(t->root), a[0]);
+    puts("after remove , print again");
     print_inorder(t->root);
     printf("\n");
 
