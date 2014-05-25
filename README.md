@@ -1,7 +1,7 @@
 xclib
 =====
 
-Extension library for C, including Queue, Stack and Common String functions. C Standard library has some popular functions including memory allocation, assert, time and basic string functions. However, it's still a burden to recreate some ubiquitous data structure and algorithm.
+Extension library for C, including Queue, Stack, Hashmap, LinkedList and Common String functions. C Standard library has some popular functions including memory allocation, assert, time and basic string functions. However, it's still a burden to recreate some ubiquitous data structure and algorithm.
 
 ### Stack
 
@@ -11,6 +11,16 @@ Extension library for C, including Queue, Stack and Common String functions. C S
 * Stack_isEmpty 
 
 ### Queue
+
+* hashmap_create
+* hashme: hash function, which accepts sring, returns size_t value
+* hashmap_put
+* hashmap_get
+* hashmap_remove
+
+### Hashmap 
+
+### LinkedList
 
 ### String Manuplication Functions
 
